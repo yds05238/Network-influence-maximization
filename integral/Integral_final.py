@@ -56,13 +56,13 @@ def sigma(M,S,theta,mc):
 def greedy(M,mc):
     budget = M.budget 
     S = {}
-    theta = np.random.randint(M.theta_min, M.theta_max, size = (M.n))
+    theta = np.random.uniform(M.theta_min, M.theta_max, size = (M.n))
     while budget > 0: 
         test = {}
         greedy = 0
         new = set(theta) - set(S)
         for x in new:
-            test[theta[x]] = x
+            test[list(theta).index(x)] = x
             influence = sigma(M,test,theta,mc) 
             if np.sum(influence) > greedy: 
                 S.update(test)
