@@ -15,7 +15,8 @@ class Golub_Jackson(object):
        C = n x n cross holding matrix 
        beta = default cost 
        index = index of the graph object created with numbered indexes 
-       lower_bound,upper_bound = possible range of theta 
+       theta_min = min possible theta value
+       theta_max = max possible theta value
     """
     
     def __init__(self, G, Dp, C, beta, theta_min, theta_max, budget):
